@@ -1,6 +1,6 @@
 [{
         "id": 1,
-        "cluster": "Cluster1",
+        "cluster": "Cluster-1",
         "pm10": 50,
         "pm25": 49,
         "so2": 47,
@@ -10,7 +10,7 @@
     },
     {
         "id": 2,
-        "cluster": "Cluster2",
+        "cluster": "Cluster-2",
         "pm10": 70,
         "pm25": 90,
         "so2": 54,
