@@ -9,15 +9,15 @@
     <?php include 'navbar.php'?>
 
     <div class="card">
-      <h3 class="card-header alert-success">
+      <h5 class="card-header alert-success">
         Home
-      </h3>
+      </h5>
     </div>
 
     <div class="container ms-auto mt-4">
     <div class="card">
         <h5 class="card-header alert-info">
-        Data
+        Tabel Data
         </h5>
         <div class="card-header alert-success">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -27,11 +27,11 @@
         
         <div class="card-body">
         <div class="table-responsive">
-        <table class="table">
+        <table class="table" id="table-sample">
         <thead>
             <tr>
                 <th scope="col">No</th>
-                <th scope="col">Tgl</th>
+                <th scope="col">Tanggal</th>
                 <th scope="col">Lokasi</th>
                 <th scope="col">PM10</th>
                 <th scope="col">PM25</th>
@@ -237,4 +237,17 @@
     
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- Data Tables -->
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js">
+  </script>
+  <script>
+    $(document).ready(function() {
+      $('#table-sample').DataTable();
+    });
+  </script>
 </html>

@@ -14,19 +14,19 @@
     <?php include 'navbar.php'?>
 
     <div class="card">
-      <h3 class="card-header alert-success">
+      <h5 class="card-header alert-success">
         Proses
-      </h3>
+      </h5>
     </div>
 
     <div class="container ms-auto mt-4">
     <div class="card">
         <h5 class="card-header alert-info">
-        Cluster
+        Tabel Cluster
         </h5>
        <div class="card-body">
-            <div class="table-responsive bg-light">
-        <table class="table">
+            <div class="table-responsive bg-light" >
+        <table class="table" id="table-cluster">
         <thead>
             <tr>
                 <th scope="col">No</th>
@@ -68,24 +68,19 @@
     </div>
 
     <div class="card mt-3">
-    <h5 class="card-header alert-info">Data</h5>
+    <h5 class="card-header alert-info">Tabel Proses</h5>
     <div class="card-body">
     <div class="table-responsive">
-        <table class="table">
+        <table class="table" id="table-proses">
         <thead>
             <tr>
                 <th scope="col">No</th>
-                <th scope="col">Tgl</th>
-                <th scope="col">Lokasi</th>
                 <th scope="col">PM10</th>
                 <th scope="col">PM25</th>
                 <th scope="col">SO2</th>
                 <th scope="col">CO</th>        
                 <th scope="col">O3</th>
                 <th scope="col">NO2</th>
-                <th scope="col">MAX</th>
-                <th scope="col">Crit.</th>
-                <th scope="col">Kat.</th>
                 <th scope="col">Cluster1</th>
                 <th scope="col">Cluster2</th>
                 <th scope="col">Cluster3</th>
@@ -100,17 +95,12 @@
                 foreach ($arrayPHPA as $barisa){                                 
             ?>
                 <th scope="row"><?= $no++?></td>
-                <td><?= $barisa['tanggal'];?></td>
-                <td><?= $barisa['lokasi'];?></td>
                 <td><?= $barisa['pm10'];?></td>
                 <td><?= $barisa['pm25'];?></td>
                 <td><?= $barisa['so2'];?></td>
                 <td><?= $barisa['co'];?></td>
                 <td><?= $barisa['o3'];?></td>
                 <td><?= $barisa['no2'];?></td>
-                <td><?= $barisa['max'];?></td>
-                <td><?= $barisa['critical'];?></td>
-                <td><?= $barisa['kategori'];?></td>
                 <td>
                     <!-- C1 -->
                     <?php 
@@ -140,13 +130,13 @@
                 <td>
                 <?php 
                     if(min($min) == $c1){
-                        echo '1';
+                        echo 'Cluster-1';
                     }
                     if(min($min) == $c2){
-                        echo '2';
+                        echo 'Cluster-2';
                     }
                     if(min($min) == $c3){
-                        echo '3';
+                        echo 'Cluster-3';
                     }
                 ?>
                 </td>
@@ -162,4 +152,20 @@
     
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- Data Tables -->
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js">
+  </script>
+  <script>
+    $(document).ready(function() {
+      $('#table-cluster').DataTable();
+    });
+    $(document).ready(function() {
+      $('#table-proses').DataTable();
+    });
+  </script>
 </html>
