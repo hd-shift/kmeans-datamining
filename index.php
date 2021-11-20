@@ -1,15 +1,12 @@
-<?php 
-    //read data
-    $dir = 'data/data.json';
-    $dataJson = file_get_contents($dir);
-    $arrayPHP = json_decode($dataJson, true);
-
-?>
+    <!-- get_content.php mereferensikan ke data acuan -->
+    <!-- arrayCLuster = arrayCluster -->
+    <!-- arrayPolusi = arrayPolusi -->
+    <?php include 'get_content.php'; ?>
     <?php include 'header.php'?>
     <?php include 'navbar.php'?>
 
     <div class="card">
-      <h5 class="card-header alert-success">
+      <h5 class="card-header alert-success text-center">
         Home
       </h5>
     </div>
@@ -40,15 +37,15 @@
                 <th scope="col">O3</th>
                 <th scope="col">NO2</th>
                 <th scope="col">MAX</th>
-                <th scope="col">Crit.</th>
-                <th scope="col">Kat.</th>
+                <th scope="col">Critical</th>
+                <th scope="col">Kategori</th>
             </tr>
         </thead>
         <tbody>
             <tr>
             <?php
                 $no = 1;
-                foreach ($arrayPHP as $baris){                                 
+                foreach ($arrayPolusi as $baris){                                 
             ?>
 
                 <th scope="row"><?= $no++?></td>
@@ -146,9 +143,10 @@
     <?php
 
     if(isset($_POST['submit'])){
-    $dir = 'data/data.json';
-    $dataJson = file_get_contents($dir);
-    $arayPHP = json_decode($dataJson, true);
+    //Read dan memasukkan data ketika tombol submit ditekan (s = sumbit)
+    $dirs = 'data/data.json';
+    $dataPolusis = file_get_contents($dir);
+    $arayPolusis = json_decode($dataPolusis, true);
 
     $pm10 = $_POST['pm10'];
     $pm25 = $_POST['pm25'];
@@ -201,7 +199,7 @@
         $kategori = "TIDAK SEHAT";
     }
 
-    $arayPHP[] = array(
+    $arayPolusis[] = array(
         'tanggal' => $_POST['tanggal'],
         'lokasi' => $_POST['lokasi'],
         'pm10' => $pm10,
@@ -216,7 +214,7 @@
         
     );
 
-    file_put_contents($dir, json_encode($arayPHP, JSON_PRETTY_PRINT), LOCK_EX);
+    file_put_contents($dirs, json_encode($arayPolusis, JSON_PRETTY_PRINT));
     
     echo '<script>
     swal({

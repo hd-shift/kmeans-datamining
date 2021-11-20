@@ -1,20 +1,12 @@
-<?php 
-    //read data
-    $dir = 'data/cluster.json';
-    $dataJson = file_get_contents($dir);
-    $arrayPHP = json_decode($dataJson, true);
-
-    $dira = 'data/data.json';
-    $dataJsona = file_get_contents($dira);
-    $arrayPHPA = json_decode($dataJsona, true);
-
-?>
-
+    <!-- get_content.php mereferensikan ke data acuan -->
+    <!-- arrayCLuster = arrayCluster -->
+    <!-- arrayPolusi = arrayPolusi -->
+    <?php include 'get_content.php'?>
     <?php include 'header.php'?>
     <?php include 'navbar.php'?>
 
     <div class="card">
-      <h5 class="card-header alert-success">
+      <h5 class="card-header alert-success text-center">
         Proses
       </h5>
     </div>
@@ -44,7 +36,7 @@
             <tr>
             <?php
                 $no = 1;
-                foreach ($arrayPHP as $baris){                                 
+                foreach ($arrayCluster as $baris){                                 
             ?>
                 <th scope="row"><?= $no++?></td>
                 <td><?= $baris['cluster'];?></td>
@@ -92,7 +84,7 @@
             <tr>
             <?php
                 $no = 1;
-                foreach ($arrayPHPA as $barisa){                                 
+                foreach ($arrayPolusi as $barisa){                                 
             ?>
                 <th scope="row"><?= $no++?></td>
                 <td><?= $barisa['pm10'];?></td>
@@ -104,19 +96,19 @@
                 <td>
                     <!-- C1 -->
                     <?php 
-                         $c1 = sqrt(pow(($arrayPHP[0]['pm10']-$barisa['pm10']),2) + pow(($arrayPHP[0]['pm25']-$barisa['pm25']), 2) + pow(($arrayPHP[0]['so2']- $barisa['so2']), 2) + pow(($arrayPHP[0]['co']- $barisa['co']),2) + pow(($arrayPHP[0]['o3']-$barisa['o3']), 2) + pow(($arrayPHP[0]['no2']- $barisa['no2']), 2));
+                         $c1 = sqrt(pow(($arrayCluster[0]['pm10']-$barisa['pm10']),2) + pow(($arrayCluster[0]['pm25']-$barisa['pm25']), 2) + pow(($arrayCluster[0]['so2']- $barisa['so2']), 2) + pow(($arrayCluster[0]['co']- $barisa['co']),2) + pow(($arrayCluster[0]['o3']-$barisa['o3']), 2) + pow(($arrayCluster[0]['no2']- $barisa['no2']), 2));
                          echo $c1;
                     ?>
                 </td>
                 <td>
                     <?php 
-                         $c2 = sqrt(pow(($arrayPHP[1]['pm10']-$barisa['pm10']),2) + pow(($arrayPHP[1]['pm25']-$barisa['pm25']), 2) + pow(($arrayPHP[1]['so2']- $barisa['so2']), 2) + pow(($arrayPHP[1]['co']- $barisa['co']),2) + pow(($arrayPHP[1]['o3']-$barisa['o3']), 2) + pow(($arrayPHP[1]['no2']- $barisa['no2']), 2));
+                         $c2 = sqrt(pow(($arrayCluster[1]['pm10']-$barisa['pm10']),2) + pow(($arrayCluster[1]['pm25']-$barisa['pm25']), 2) + pow(($arrayCluster[1]['so2']- $barisa['so2']), 2) + pow(($arrayCluster[1]['co']- $barisa['co']),2) + pow(($arrayCluster[1]['o3']-$barisa['o3']), 2) + pow(($arrayCluster[1]['no2']- $barisa['no2']), 2));
                          echo $c2;
                     ?>
                 </td>
                 <td>
                     <?php 
-                        $c3 = sqrt(pow(($arrayPHP[2]['pm10']-$barisa['pm10']),2) + pow(($arrayPHP[2]['pm25']-$barisa['pm25']), 2) + pow(($arrayPHP[2]['so2']- $barisa['so2']), 2) + pow(($arrayPHP[2]['co']- $barisa['co']),2) + pow(($arrayPHP[2]['o3']-$barisa['o3']), 2) + pow(($arrayPHP[2]['no2']- $barisa['no2']), 2));
+                        $c3 = sqrt(pow(($arrayCluster[2]['pm10']-$barisa['pm10']),2) + pow(($arrayCluster[2]['pm25']-$barisa['pm25']), 2) + pow(($arrayCluster[2]['so2']- $barisa['so2']), 2) + pow(($arrayCluster[2]['co']- $barisa['co']),2) + pow(($arrayCluster[2]['o3']-$barisa['o3']), 2) + pow(($arrayCluster[2]['no2']- $barisa['no2']), 2));
                         echo $c3;
                     ?>
                 </td>
