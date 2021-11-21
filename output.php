@@ -39,42 +39,42 @@
             <tr>
             <?php
                 $no = 1;
-                foreach ($arrayPolusi as $barisa){                                 
+                foreach ($arrayPolusi as $baris){                                 
             ?>
                 <th scope="row"><?= $no++?></td>
-                <td><?= $barisa['tanggal'];?></td>
-                <td><?= $barisa['lokasi'];?></td>
-                <td><?= $barisa['pm10'];?></td>
-                <td><?= $barisa['pm25'];?></td>
-                <td><?= $barisa['so2'];?></td>
-                <td><?= $barisa['co'];?></td>
-                <td><?= $barisa['o3'];?></td>
-                <td><?= $barisa['no2'];?></td>
-                <td><?= $barisa['max'];?></td>
-                <td><?= $barisa['critical'];?></td>
-                <td><?= $barisa['kategori'];?></td>
+                <td><?= $baris['tanggal'];?></td>
+                <td><?= $baris['lokasi'];?></td>
+                <td><?= $baris['pm10'];?></td>
+                <td><?= $baris['pm25'];?></td>
+                <td><?= $baris['so2'];?></td>
+                <td><?= $baris['co'];?></td>
+                <td><?= $baris['o3'];?></td>
+                <td><?= $baris['no2'];?></td>
+                <td><?= $baris['max'];?></td>
+                <td><?= $baris['critical'];?></td>
+                <td><?= $baris['kategori'];?></td>
 
                 <?php 
-                         $c1 = sqrt(pow(($arrayPolusi[0]['pm10']-$barisa['pm10']),2) + 
-                         pow(($arrayPolusi[0]['pm25']-$barisa['pm25']), 2) + 
-                         pow(($arrayPolusi[0]['so2']- $barisa['so2']), 2) + 
-                         pow(($arrayPolusi[0]['co']- $barisa['co']),2) + 
-                         pow(($arrayPolusi[0]['o3']-$barisa['o3']), 2) + 
-                         pow(($arrayPolusi[0]['no2']- $barisa['no2']), 2));
+                         $c1 = sqrt(pow(($arrayCluster[0]['pm10']-$baris['pm10']),2) + 
+                         pow(($arrayCluster[0]['pm25']-$baris['pm25']), 2) + 
+                         pow(($arrayCluster[0]['so2']- $baris['so2']), 2) + 
+                         pow(($arrayCluster[0]['co']- $baris['co']),2) + 
+                         pow(($arrayCluster[0]['o3']-$baris['o3']), 2) + 
+                         pow(($arrayCluster[0]['no2']- $baris['no2']), 2));
 
-                         $c2 = sqrt(pow(($arrayPolusi[1]['pm10']-$barisa['pm10']),2) + 
-                         pow(($arrayPolusi[1]['pm25']-$barisa['pm25']), 2) + 
-                         pow(($arrayPolusi[1]['so2']- $barisa['so2']), 2) + 
-                         pow(($arrayPolusi[1]['co']- $barisa['co']),2) + 
-                         pow(($arrayPolusi[1]['o3']-$barisa['o3']), 2) + 
-                         pow(($arrayPolusi[1]['no2']- $barisa['no2']), 2));
+                         $c2 = sqrt(pow(($arrayCluster[1]['pm10']-$baris['pm10']),2) + 
+                         pow(($arrayCluster[1]['pm25']-$baris['pm25']), 2) + 
+                         pow(($arrayCluster[1]['so2']- $baris['so2']), 2) + 
+                         pow(($arrayCluster[1]['co']- $baris['co']),2) + 
+                         pow(($arrayCluster[1]['o3']-$baris['o3']), 2) + 
+                         pow(($arrayCluster[1]['no2']- $baris['no2']), 2));
  
-                         $c3 = sqrt(pow(($arrayPolusi[2]['pm10']-$barisa['pm10']),2) + 
-                         pow(($arrayPolusi[2]['pm25']-$barisa['pm25']), 2) + 
-                         pow(($arrayPolusi[2]['so2']- $barisa['so2']), 2) + 
-                         pow(($arrayPolusi[2]['co']- $barisa['co']),2) + 
-                         pow(($arrayPolusi[2]['o3']-$barisa['o3']), 2) + 
-                         pow(($arrayPolusi[2]['no2']- $barisa['no2']), 2));
+                         $c3 = sqrt(pow(($arrayCluster[2]['pm10']-$baris['pm10']),2) + 
+                         pow(($arrayCluster[2]['pm25']-$baris['pm25']), 2) + 
+                         pow(($arrayCluster[2]['so2']- $baris['so2']), 2) + 
+                         pow(($arrayCluster[2]['co']- $baris['co']),2) + 
+                         pow(($arrayCluster[2]['o3']-$baris['o3']), 2) + 
+                         pow(($arrayCluster[2]['no2']- $baris['no2']), 2));
 
                          $min = array($c1, $c2, $c3);
                 ?>
