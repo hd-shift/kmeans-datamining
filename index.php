@@ -1,9 +1,9 @@
     <!-- get_content.php mereferensikan ke data acuan -->
     <!-- arrayCLuster = arrayCluster -->
     <!-- arrayPolusi = arrayPolusi -->
-    <?php include 'get_content.php'; ?>
-    <?php include 'header.php'?>
-    <?php include 'navbar.php'?>
+    <?php require 'get_content.php'; ?>
+    <?php require 'header.php'?>
+    <?php require 'navbar.php'?>
 
     <div class="card">
       <h5 class="card-header alert-success text-center">
